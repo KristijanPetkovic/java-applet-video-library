@@ -1,0 +1,33 @@
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    cellpadding:15px;
+  }
+body {
+	background: url(poz2.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	text-align:center;
+  }
+#produzenje{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 30px;
+}
+.iskosi{
+	font-style: italic;
+}
+table{
+	border-collapse: collapse;
+	width:35%;
+	alignt:center;
+}
+tr:hover{
+	background: rgb(96, 158, 255);
+}
+input:focus{
+	background-color: rgb(255, 255, 179);
+	border-color: rgb(186, 186, 186);
+}

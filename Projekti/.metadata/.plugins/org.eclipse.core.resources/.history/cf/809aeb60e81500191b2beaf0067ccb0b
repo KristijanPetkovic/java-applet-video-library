@@ -1,0 +1,71 @@
+<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="../css/dodajFilm.css" >
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Otvaranje naloga</title>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="filmovi.html">Videoteka</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="/www.videoteka.com/filmovi.html">Filmovi <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/www.videoteka.com/filmovi.html">Pregled filmova</a></li>
+						<li><a href="/www.videoteka.com/dodajFilm.html">Dodaj film</a></li>
+					</ul></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="/www.videoteka.com/korisnici.html">Korisnici <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/www.videoteka.com/korisnici.html">Pregled korisnika</a></li>
+					</ul></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/www.videoteka.com/odjava.html"><span
+						class="glyphicon glyphicon-log-in"></span> Odjavi se</a></li>
+			</ul>
+		</div>
+	</nav>
+	<h1 id="naslov">Unos novog filma</h1>
+	<form action="DodajFilmServlet" method="post">
+		<table class="center" cellpadding="15px">
+			<tr>
+				<td>Slika:</td>
+				<td><input name="slika" type="file"></td>
+			</tr>
+			<tr>
+				<td>Naziv:</td>
+				<td><input name="naziv" type="text"></td>
+			</tr>
+			<tr>
+				<td>Žanr:</td>
+				<td><input name="zanr" type="text"></td>
+			</tr>
+			<tr>
+				<td>Godina:</td>
+				<td><input name="godina" type="text"></td>
+			</tr>
+			<tr>
+				<td>Režiser:</td>
+				<td><input name="opis" type="text"></td>
+			</tr>
+		</table>
+		<input class="color-change" type="button"
+			onclick="location.href='/www.vidoteka.com/filmovi.html';" value="Nazad" /> <input
+			class="color-change" name="saèuvaj" type="submit" value="Saèuvaj">
+	</form>
+</body>
+</html>

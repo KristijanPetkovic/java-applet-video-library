@@ -1,0 +1,120 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/izmjeni.html")
+public class IzmjeniServlet extends HttpServlet {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String imeSesije = (String) request.getSession().getAttribute("ime");
+		
+		if(imeSesije == null) {
+			response.sendRedirect("login.html");
+		}else {		
+			String id = request.getParameter("id");
+			if(id == null && imeSesije != null) {
+				response.sendRedirect("filmovi.html");
+			}else {
+				String url = "jdbc:sqlserver://localhost:1433;databaseName=Videoteka;user=sa;password=root";
+				Connection con = null;
+		
+				String out = "";		
+				out +=  "<html>\r\n" + 
+						"	<head>\r\n" + 
+						"		<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\r\n" + 
+						"		<title>Izmjena filma</title>\r\n" + 
+						"		<link rel=\"stylesheet\" href=\"izmjeni.css\" >\r\n" +
+						"	</head>\r\n" + 
+						"	\r\n" + 
+						"	<body>\r\n" + 
+						"		<h1 id=\"naslov\">Stranica za azuriranje podataka filmova</h1>\r\n" +
+						"		<form action=\"filmovi.html\" method=\"post\">\r\n" +
+						"			<table class=\"center\">\r\n";
+				
+				try {
+					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+					con = DriverManager.getConnection(url);
+					Statement stmt = con.createStatement();
+					ResultSet rs = stmt.executeQuery("SELECT * FROM Filmovi WHERE id='" + id + "'");
+								
+					while(rs.next()) {				
+						out +=  "			<tr>\r\n" + 
+								"				<td align=\"right\">ID: </th>\r\n" +
+								"				<td> <input enable=\"disable\" name=\"id\" type=\"text\" value=\"" + rs.getString("id") + "\"> </th>\r\n" +
+								"			</tr>\r\n" +
+								"			<tr>\r\n" + 
+								"				<td align=\"right\">SLIKA: </th>\r\n" +
+								"				<td> <input name=\"slika\" type=\"text\" value=\"" + rs.getString("slika") + "\"> </th>\r\n" +
+								"			</tr>\r\n" +
+								"			<tr>\r\n" + 
+								"				<td align=\"right\">NAZIV: </th>\r\n" +
+								"				<td> <input name=\"naziv\" type=\"text\" value=\"" + rs.getString("naziv") + "\"> </th>\r\n" +
+								"			</tr>\r\n" +
+								"			<tr>\r\n" + 
+								"				<td align=\"right\">Zanr: </th>\r\n" +
+								"				<td> <input name=\"zanr\" type=\"text\" value=\"" + rs.getString("zanr") + "\"> </th>\r\n" +
+								"			</tr>\r\n" +
+								"			<tr>\r\n" + 
+								"				<td align=\"right\">GODINA: </th>\r\n" +
+								"				<td> <input name=\"godina\" type=\"text\" value=\"" + rs.getString("godina") + "\"> </th>\r\n" +
+								"			</tr>\r\n" +
+								"			<tr>\r\n" + 
+								"				<td align=\"right\">OPIS: </th>\r\n" +
+								"				<td> <input name=\"opis\" type=\"text\" value=\"" + rs.getString("opis") + "\"> </th>\r\n" +
+								"			</tr>\r\n";
+						
+					}
+				}catch(Exception e) {
+					out +=  "			<tr>\r\n" + 
+							"				<td> GRESKA !!! </td>" +
+							"			</tr>\r\n";
+					e.printStackTrace();
+				}finally {
+					if(con != null) {
+						try {						
+							con.close();
+						} catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+						
+					
+				out +=  "			</table>\r\n" +
+				
+						"	<input class=\"color-change\" type=\"button\" onclick=\"location.href='login.html';\" value=\"Nazad\" />"+
+						
+						" 		<input type=\"submit\" value=\"AZURIRAJ\">" +
+						"		</form>\r\n" + 
+						"		<a href=\"filmovi.html\">NAZAD</a>\r\n" +
+						"		&nbsp;&nbsp;&nbsp;" +
+						"	</body>\r\n" + 
+						"</html>\r\n";
+		
+				PrintWriter pw = response.getWriter();
+				pw.println(out);				
+			}			
+		}
+	}
+
+}

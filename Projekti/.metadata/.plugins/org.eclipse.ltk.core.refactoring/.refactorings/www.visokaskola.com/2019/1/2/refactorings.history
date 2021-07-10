@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;WebContent&apos;&#x0D;&#x0A;- Original project: &apos;www.visokaskola.com&apos;&#x0D;&#x0A;- Destination element: &apos;WebContent&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     login.html&#x0D;&#x0A;     otvaranje.html&#x0D;&#x0A;     style1.css" description="Copy files" element1="WebContent/login.html" element2="WebContent/otvaranje.html" element3="WebContent/style1.css" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1547038453547" target="/www.videoteka.com/WebContent" units="0" version="1.0"/>
+</session>

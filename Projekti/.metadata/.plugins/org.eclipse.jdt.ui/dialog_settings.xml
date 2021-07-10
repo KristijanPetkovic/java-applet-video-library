@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="D:\NWT- Dinamicki sajt\Apach TomCat v9\lib" key="org.eclipse.jdt.ui.lastextjar"/>
+	<section name="RefactoringWizard.preview">
+		<item value="630" key="width"/>
+		<item value="400" key="height"/>
+	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="true" key="updateSimilarElements"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="true" key="updateTextualMatches"/>
+	</section>
+	<section name="JavaBuildConfigurationBlock">
+		<item value="false" key="expanded2"/>
+		<item value="false" key="expanded1"/>
+		<item value="true" key="expanded0"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.wizards.buildpaths.NewVariableEntryDialog">
+		<item value="761" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="511" key="DIALOG_HEIGHT"/>
+		<item value="60" key="DIALOG_X_ORIGIN"/>
+		<item value="-26" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="7" key="index"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+		<item value="false" key="configure_problem_severity_dialog_id"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="2" key="pageIndex"/>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
+		<item value="true" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="450" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
+		<item value="400" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT"/>
+		<item value="false" key="GoIntoTopLevelTypeAction.isChecked"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+</section>

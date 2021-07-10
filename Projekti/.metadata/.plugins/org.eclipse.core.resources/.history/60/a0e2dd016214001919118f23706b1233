@@ -1,0 +1,72 @@
+#naslov{
+    margin-top:2%;
+    }
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    cellpadding:15px;
+  }
+body {
+ background: url(poz2.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+  text-align:center;
+  }
+table{
+	border-color: rgb(0,0,0);
+
+	border-collapse: collapse;
+}
+th{
+	color: rgb(255, 255, 255);
+	background: rgb(0, 0, 0);
+	collspan: 2;
+}
+td{
+	border-top: 1pt solid silver;
+	padding: 10;
+}
+ttr:nth-child(odd){
+	background: rgb(255, 255, 255);
+}
+tr:hover{
+	background: rgb(96, 158, 255);
+}
+input:focus{
+	background-color: rgb(255, 255, 179);
+	border-color: rgb(186, 186, 186);
+}
+.color-change {
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgb(96, 158, 255);
+  font-size: 1rem;
+  font-family: 'Roboto';
+  font-weight: 100;
+  border: 1px solid #fff;
+  box-shadow: 2px 2px 5px #AFE9FF;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+}
+.color-change:hover {
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #AFE9FF;
+}
+
+button.color-change {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.logo{
+	border-radius: 100px;
+	border: 1px solid #F69729;
+	float:right
+	}
+	

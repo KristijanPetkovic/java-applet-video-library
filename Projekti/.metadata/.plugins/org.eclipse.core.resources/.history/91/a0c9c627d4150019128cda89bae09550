@@ -1,0 +1,39 @@
+#produzenje{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 30px;
+}
+.iskosi{
+	font-style: italic;
+}
+table{
+	border-color: rgb(0,0,0);
+	border-width: 1px;
+	border-style: solid;
+	border-collapse: collapse;
+}
+.desno{
+	text-align: right;
+}
+th{
+	color: rgb(255, 255, 255);
+	background: rgb(0, 0, 0);
+	collspan: 2;
+}
+td{
+	border-top: 1pt solid silver;
+	padding: 10;
+}
+ttr:nth-child(odd){
+	background: rgb(255, 255, 255);
+}
+tr:nth-child(even){
+	background: rgb(230, 230, 230);
+}
+tr:hover{
+	background: rgb(255, 239, 204);
+}
+input:focus{
+	background-color: rgb(255, 255, 179);
+	border-color: rgb(255, 0, 0);
+}

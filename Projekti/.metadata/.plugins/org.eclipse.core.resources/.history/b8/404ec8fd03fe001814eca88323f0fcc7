@@ -1,0 +1,101 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Registrovanje
+ */
+@WebServlet("/izmeni")
+public class Izmeni extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+
+		String id = request.getParameter("id");
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Autokuca;user=sa;password=root";
+		Connection con = null;
+
+		String out = "";		
+		out += "\r\n" + 
+				"<html>\r\n" + 
+				"	<head>\r\n" + 
+				"		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n" + 
+				"		<title>Pregled registrovanih korisnika</title>\r\n" + 
+				"		<link rel=\"stylesheet\" href=\"style1.css\" >" +
+				"	</head>\r\n" + 
+				"	\r\n" + 
+				"	<body>\r\n" + 
+				"		<form action=\"index.html\" method=\"get\">\r\n" +
+				"			<table>\r\n";
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			con = DriverManager.getConnection(url);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM Korisnici WHERE id='" + id + "'");
+						
+			while(rs.next()) {				
+				out +=  "			<tr>\r\n" + 
+						"				<td align=\"right\">ID: </th>\r\n" +
+						"				<td> <input enable=\"disable\" name=\"id\" type=\"text\" value=\"" + rs.getString("id") + "\"> </th>\r\n" +
+						"			</tr>\r\n" +
+						"			<tr>\r\n" + 
+						"				<td align=\"right\">IME: </th>\r\n" +
+						"				<td> <input name=\"ime\" type=\"text\" value=\"" + rs.getString("ime") + "\"> </th>\r\n" +
+						"			</tr>\r\n" +
+						"			<tr>\r\n" + 
+						"				<td align=\"right\">PREZIME: </th>\r\n" +
+						"				<td> <input name=\"prezime\" type=\"text\" value=\"" + rs.getString("prezime") + "\"> </th>\r\n" +
+						"			</tr>\r\n" +
+						"			<tr>\r\n" + 
+						"				<td align=\"right\">JMBG: </th>\r\n" +
+						"				<td> <input name=\"jmbg\" type=\"text\" value=\"" + rs.getString("jmbg") + "\"> </th>\r\n" +
+						"			</tr>\r\n" +
+						"			<tr>\r\n" + 
+						"				<td align=\"right\">MARKA: </th>\r\n" +
+						"				<td> <input name=\"marka\" type=\"text\" value=\"" + rs.getString("marka") + "\"> </th>\r\n" +
+						"			</tr>\r\n" +
+						"			<tr>\r\n" + 
+						"				<td align=\"right\">TIP: </th>\r\n" +
+						"				<td> <input name=\"tip\" type=\"text\" value=\"" + rs.getString("tip") + "\"> </th>\r\n" +
+						"			</tr>\r\n" +
+						"			<tr>\r\n" + 
+						"				<td align=\"right\">OZNAKA: </th>\r\n" +
+						"				<td> <input name=\"oznaka\" type=\"text\" value=\"" + rs.getString("oznaka") + "\"> </th>\r\n" +
+						"			</tr>\r\n" + 
+						"			<tr>\r\n" + 
+						"				<td colspan=\"2\" align=\"center\"> <input type=\"submit\" value=\"AZURIRAJ\"  > </th>\r\n" +
+						"			</tr>\r\n";
+				
+			}
+		}catch(Exception e) {
+			out +=  "			<tr>\r\n" + 
+					"				<td> GRESKA !!! </td>" +
+					"			</tr>\r\n";
+			e.printStackTrace();
+		}
+				
+			
+		out +=  "			</table>\r\n" +
+				"		</form>\r\n" + 
+				"	</body>\r\n" + 
+				"</html>\r\n";
+
+		PrintWriter pw = response.getWriter();
+		pw.println(out);
+		
+	}
+
+}

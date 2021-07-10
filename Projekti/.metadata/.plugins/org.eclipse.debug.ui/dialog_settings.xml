@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="EXT_FOLDER_LAST_SUBDIR_SETTING"/>
+	<item value="D:\NWT- Dinamicki sajt\Projekti\visokaskola\src" key="EXT_FOLDER_LAST_PATH_SETTING"/>
+	<section name="org.eclipse.debug.ui.LAUNCH_CONFIGURATION_PROPERTIES_DIALOG_SECTION">
+		<item value="777" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="702" key="DIALOG_HEIGHT"/>
+	</section>
+	<section name="org.eclipse.debug.ui.sourcelookup.SourceLookupDialog">
+		<item value="700" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="504" key="DIALOG_HEIGHT"/>
+		<item value="619" key="DIALOG_X_ORIGIN"/>
+		<item value="188" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.jdt.debug.ui.PROJECT_SELECTION_DIALOG_SECTION">
+		<item value="352" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="464" key="DIALOG_HEIGHT"/>
+	</section>
+</section>

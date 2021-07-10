@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Prijavljivanje</title>
+
+		<link href="logovanje.css" >
+	</head>
+	<body>
+		<h1 id="naslov">Prijavite se</h1>
+		<form method="post">
+			<table class="center" cellpadding="15px">
+				<tr>
+					<td>Korisnièko ime: </td>
+					<td> <input name="ime" type="text"> </td>
+				</tr>
+				<tr>
+					<td>Lozinka: </td>
+					<td> <input name="sifra" type="password"> </td>
+				</tr>
+			</table>
+			<input class="color-change" name="otvaranje" type="submit" value="Novi nalog" formaction="noviKorisnik.html">
+			<input class="color-change" name="prijava" type="submit" value="Prijava" formaction="LoginServlet" >
+			
+		</form>
+	</body>
+</html>

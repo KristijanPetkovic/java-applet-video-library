@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Pravila</title>
+		<style>
+			body{
+					background: url(../slike/poz3.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+				font-family: 'Open Sans', sans-serif;
+				text-align: justify;
+			}
+			pre{
+				color: red;
+			}
+			p{
+				font-size:16px;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<h3>Ko smo mi?</h3>
+<p>
+	Videoteka je poèela sa radom i u našem gradu, doðite kod nas i uverite se u naš kvalitet i širok asortiman filmova, serija, dokumentaraca i još mnogo toga.
+	Svojom pojavom na novosadskom filmskom nebu napravili smo veliku pometnju.Prvi smo uveli praksu iznajmljivanja filmova na više dana, to jest,po principu koliko filmova toliko dana zadržavanja. 
+	Kolièina filmova se uveæavala velikom brzinom,tako da i dan danas imamo èast da Vas obavestimo da smo jedina Videoteka u Novom Sadu koja u svojoj ponudi ima filmove svih distributera u Srbiji izdate legalnim putem.
+	Videoteka je zadržala tradiciju iznajmljivanja iskljuèivo originalnih izdanja na DVD-u. 
+	Budite sigurni da su svi filmovi koje iznajmljujete iskljuèivo originali, i da æe tako ostati i u buduænosti.
+	Zadovoljstvo nam je da Vam saopštimo, ukoliko veæ niste postali èlan novosadske Videoteke, da smo klub koji u svojoj ponudi iznajmljuje preko 2800 filmova na 10 (deset) dana bez obzira na kolièinu,
+	time pokazujemo da nam je stalo do naših èlanova i želimo da svakom izaðemo u susret.
+	Svi legalni filmovi i noviteti prvo stižu u našu Videoteku!<br>
+	<b>Doðite i uverite se, postanite još jedan zadovoljni èlan našeg kluba.</b>
+
+</p>
+
+	<h3>Kako postati jedan od nas?</h3>
+<p>
+	<i>Registrujte se</i><br>
+	Ako još niste naš èlan, kliknite na link Registracija. Zatim ispunite korisnièko ime i lozinku. Nakon toga možete krenuti dalje.<br>
+	<br>
+
+	<i> Uživate u gledanju</i><br>
+	Filmove gledate onda kada imate vremena.<br>
+
+	 <br>
+	<i>Lista želja </i><br>
+	Ukoliko postoji film koji bi ste željeli gledati, a kod nas ga nema, obratite se našem timu! 
+</p>
+	<h3>Cenovnik:</h3>
+		<pre>
+			CENA IZNAJMLJIVANJA FILMA JE
+
+				100 DINARA
+		</pre>
+	
+	<h3>KONTAKT INFORMACIJE:</h3>
+		<p>
+			Možete nas kontaktirati na sledeæe naèine:<br>
+			<br>
+			Videoteka<br>
+			Bulevar cara Lazara br. 58<br>
+			21000 Novi Sad<br>
+			videoteka@gmail.com<br>
+		</p>
+	</body>
+</html>

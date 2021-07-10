@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html">
+		<title>Otvaranje naloga</title>
+		<link rel="stylesheet" type="text/css" href="./css/logovanje.css" >
+	</head>
+	<body>
+	<input name="greska" id="greska" type="text" >
+		<h1 id="naslov">Unesite novo korisnièko ime i lozinku</h1>
+		<form action="NoviKorisnikServlet" method="post">
+			<table class="center" cellpadding="15px">
+				<tr>
+					<td>Korisnièko ime: </td>
+					<td> <input name="ime" type="text"> </td>
+				</tr>
+				<tr>
+					<td>Lozinka: </td>
+					<td> <input name="sifra" type="text"> </td>
+				</tr>
+			</table>
+			<input class="color-change" type="button" onclick="location.href='www.videoteka.com/pocetna.html';" value="Nazad" />
+			<input class="color-change" name="saèuvaj" type="submit" value="Saèuvaj">
+		</form>
+	</body>
+</html>

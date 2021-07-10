@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>Otvaranje naloga</title>
+		<link rel="stylesheet" href="noviKorisnik.css" >
+	</head>
+	<body>
+		<h1 id="naslov">Unesite novo korisničko ime i lozinku</h1>
+		<form action="NoviKorisnikServlet" method="post">
+			<table class="center" cellpadding="15px">
+				<tr>
+					<td>Korisničko ime: </td>
+					<td> <input name="ime" type="text"> </td>
+				</tr>
+				<tr>
+					<td>Lozinka: </td>
+					<td> <input name="sifra" type="text"> </td>
+				</tr>
+			</table>
+			<input class="color-change" name="sačuvaj" type="submit" value="Sačuvaj">
+			<input type="button" onclick="location.href='http://google.com';" value="Go to Google" />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\NWT- Dinamicki sajt\Projekti\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1966334953.index
+181190965.index
+2874967651.index
+97226763.index
+2425207471.index
+2895281427.index

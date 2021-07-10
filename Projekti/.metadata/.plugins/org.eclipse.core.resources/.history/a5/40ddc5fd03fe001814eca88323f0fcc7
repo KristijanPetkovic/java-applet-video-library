@@ -1,0 +1,143 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Registrovanje
+ */
+@WebServlet({"/","/index","/index.html"})
+public class Index extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+
+		String id = request.getParameter("id");
+		String ime = request.getParameter("ime");
+		String prezime = request.getParameter("prezime");
+		String jmbg = request.getParameter("jmbg");
+		String marka = request.getParameter("marka");
+		String tip = request.getParameter("tip");
+		String oznaka = request.getParameter("oznaka");
+		
+		System.out.println("++++ " + id + " " + ime + " " + prezime + " " + jmbg + " " + marka + " " + tip + " " + oznaka + " +++++");
+		
+		String out = "";
+		
+		out += "\r\n" + 
+				"<html>\r\n" + 
+				"	<head>\r\n" + 
+				"		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n" + 
+				"		<title>Pregled registrovanih korisnika</title>\r\n" + 
+				"		<link rel=\"stylesheet\" href=\"style1.css\" >" +
+				"	</head>\r\n" + 
+				"	\r\n" + 
+				"	<body>\r\n" + 
+				"		<table>\r\n" + 
+				"			<tr>\r\n" + 
+				"				<th hidden>ID</th>\r\n" + 
+				"				<th>IME</th>\r\n" + 
+				"				<th>PREZIME</th>\r\n" + 
+				"				<th>JMBG</th>\r\n" + 
+				"				<th>MARKA</th>\r\n" + 
+				"				<th>TIP</th>\r\n" + 
+				"				<th>OZNAKA</th>\r\n" + 
+				"				<th>AKCIJA</th>\r\n" + 
+				"			</tr>\r\n";
+		
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Autokuca;user=sa;password=root";
+		Connection con = null;		
+		
+		if(id == null) {
+			try {
+				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+				con = DriverManager.getConnection(url);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery("SELECT * FROM Korisnici");
+				while(rs.next()) {
+					out += "	<tr>\r\n" + 
+							"				<td hidden>" + rs.getInt("id") + "</td>\r\n" + 
+							"				<td>" + rs.getString("ime") + "</td>\r\n" + 
+							"				<td>" + rs.getString("prezime") + "</td>\r\n" + 
+							"				<td>" + rs.getString("jmbg") + "</td>\r\n" + 
+							"				<td>" + rs.getString("marka") + "</td>\r\n" + 
+							"				<td>" + rs.getString("tip") + "</td>\r\n" + 
+							"				<td>" + rs.getString("oznaka") + "</td>\r\n" + 
+							"				<td> <a href=\"izmeni?id=" + rs.getInt("id") + "\">izmeni<a/> &nbsp;&nbsp;&nbsp; <a href=\"obrisi?id=" + rs.getInt("id") + "\">obrisi<a/></td>\r\n" + 
+							"	</tr>\r\n";
+				}
+			}catch(Exception e) {
+				out += "	<tr>\r\n" + 
+						"				<td hidden> GREŠKA !!! </td>\r\n" + 
+						"				<td> GREŠKA !!! </td>\r\n" + 
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"	</tr>\r\n";
+				e.printStackTrace();
+			}
+			
+		}else {
+			// preusmereni sa izmeni.html
+			try {
+				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+				con = DriverManager.getConnection(url);
+				Statement stmt = con.createStatement();
+				stmt.execute("UPDATE Korisnici SET ime='"+ ime + "', prezime='"+ prezime + "', jmbg='"+ jmbg + "', marka='"+ marka + "', tip='"+ tip + "', oznaka='"+ oznaka + "' WHERE id='"+ id +"'");
+				ResultSet rs = stmt.executeQuery("SELECT * FROM Korisnici");
+				while(rs.next()) {
+					out += "	<tr>\r\n" + 
+							"				<td hidden>" + rs.getInt("id") + "</td>\r\n" + 
+							"				<td>" + rs.getString("ime") + "</td>\r\n" + 
+							"				<td>" + rs.getString("prezime") + "</td>\r\n" + 
+							"				<td>" + rs.getString("jmbg") + "</td>\r\n" + 
+							"				<td>" + rs.getString("marka") + "</td>\r\n" + 
+							"				<td>" + rs.getString("tip") + "</td>\r\n" + 
+							"				<td>" + rs.getString("oznaka") + "</td>\r\n" + 
+							"				<td> <a href=\"izmeni?id=" + rs.getInt("id") + "\">izmeni<a/> &nbsp;&nbsp;&nbsp; <a href=\"obrisi?id=" + rs.getInt("id") + "\">obrisi<a/></td>\r\n" + 
+							"	</tr>\r\n";
+				}
+			}catch(Exception e) {
+				out += "	<tr>\r\n" + 
+						"				<td hidden> GREŠKA !!! </td>\r\n" + 
+						"				<td> GREŠKA !!! </td>\r\n" + 
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"				<td> GREŠKA !!! </td>\\r\\n\"" +  
+						"	</tr>\r\n";
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+		
+	
+			
+		out +=  "		</table>\r\n" + 
+				"	</body>\r\n" + 
+				"</html>\r\n";
+
+		PrintWriter pw = response.getWriter();
+		pw.println(out);
+		
+	}
+
+}
